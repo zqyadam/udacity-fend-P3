@@ -189,7 +189,7 @@
         padding: 5px 10px 0;
         box-sizing: border-box;
     }
-    #restaurants-list .restaurant-detail h1 {
+    #restaurants-list .restaurant-detail h2 {
         font-size: 14pt;
         margin: 0;
     }
@@ -424,7 +424,7 @@
         font-size: 11pt;
     }
     /* reviews  */
-    /* .inside #reviews-container {
+    .inside #reviews-container {
         width: 100%;
         box-sizing: border-box;
         padding: 20px 15px 20px;
@@ -458,7 +458,7 @@
     }
     .inside #reviews-list p:nth-child(3) {
         font-size: 14pt;
-    } */
+    }
     /* footer */
     .inside #footer {
         position: fixed;

@@ -33,14 +33,27 @@ self.addEventListener('install', function (event) {
 });
 
 
-self.addEventListener('fetch',function(event) {
-    
-    event.respondWith(
-        caches.match(event.request).then(function(response) {
-            if (response) {
-                return response;
-            } 
-            return fetch(event.request);
-        })
-    )
+self.addEventListener('fetch', function (event) {
+    let requestUrl = new URL(event.request.url)
+
+    if (requestUrl.origin === location.origin && requestUrl.pathname === '/restaurant.html') {
+        event.respondWith(
+            caches.match('restaurant.html').then(function (response) {
+                console.log(response)
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
+        )
+    } else {
+        event.respondWith(
+            caches.match(event.request).then(function (response) {
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
+        )
+    }
 })
